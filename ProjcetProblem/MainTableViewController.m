@@ -12,7 +12,6 @@
 
 @property (nonatomic,strong) NSMutableArray *fileList;
 
-
 @end
 
 @implementation MainTableViewController
@@ -42,26 +41,9 @@
     
     NSString *ext = [filename pathExtension];
     
-    if ([ext isEqualToString:@"plist"]) {
-        cell.textLabel.textColor = [UIColor redColor];
-    }
-    if ([ext isEqualToString:@"png"]) {
-        cell.textLabel.textColor = [UIColor blueColor];
-    }
-    if ([ext isEqualToString:@"jpg"]) {
-        cell.textLabel.textColor = [UIColor greenColor];
-    }
-    if ([ext isEqualToString:@"xcassets"]) {
-        cell.textLabel.textColor = [UIColor yellowColor];
-    }
-    if ([ext isEqualToString:@"storyboardc"]) {
-        cell.textLabel.textColor = [UIColor purpleColor];
-    }
-    if ([ext isEqualToString:@""]) {
-        cell.textLabel.textColor = [UIColor cyanColor];
-    }
-
+    cell.textLabel.textColor = [self colorForExtention:ext];
     cell.textLabel.text = filename;
+    
     return cell;
 }
 
@@ -119,6 +101,30 @@
         [self.fileList addObject:[directoryContent objectAtIndex:idx]];
         
     }];
+}
+
+- (UIColor *)colorForExtention:(NSString *)extention {
+    if ([extention isEqualToString:@"plist"]) {
+        return [UIColor redColor];
+    }
+    else if ([extention isEqualToString:@"png"]) {
+        return [UIColor blueColor];
+    }
+    else if ([extention isEqualToString:@"jpg"]) {
+        return [UIColor greenColor];
+    }
+    else if ([extention isEqualToString:@"xcassets"]) {
+       return [UIColor yellowColor];
+    }
+    else if ([extention isEqualToString:@"storyboardc"]) {
+        return [UIColor purpleColor];
+    }
+    else if ([extention isEqualToString:@""]) {
+        return [UIColor cyanColor];
+    }
+    else {
+        return [UIColor blackColor];
+    }
 }
 
 @end
