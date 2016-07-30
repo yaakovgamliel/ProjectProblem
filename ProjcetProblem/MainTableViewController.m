@@ -19,23 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    int count;
-    
-    if (self.subpath == nil) {
-        self.subpath = [[NSBundle mainBundle] bundlePath];
-    }
-    
-
-    self.fileList = [NSMutableArray new];
-    
-    NSArray *directoryContent = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:self.subpath error:NULL];
-    for (count = 0; count < (int)[directoryContent count]; count++)
-    {
-        NSLog(@"File %d: %@", (count + 1), [directoryContent objectAtIndex:count]);
-        [self.fileList addObject:[directoryContent objectAtIndex:count]];
-    }
-
+    [self populateFileList];
 }
 
 #pragma mark - Table view data source
@@ -114,6 +98,27 @@
     [fileHandler seekToEndOfFile];
     [fileHandler writeData:[logLine dataUsingEncoding:NSUTF8StringEncoding]];
     [fileHandler closeFile];
+}
+
+#pragma mark - Helper methods
+
+- (void)populateFileList {
+    
+    if (!self.subpath) {
+        self.subpath = [[NSBundle mainBundle] bundlePath];
+    }
+    
+    self.fileList = [NSMutableArray new];
+    
+    NSArray *directoryContent = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:self.subpath error:NULL];
+    
+    [directoryContent enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        NSLog(@"File %lu: %@", (idx + 1), [directoryContent objectAtIndex:idx]);
+        
+        [self.fileList addObject:[directoryContent objectAtIndex:idx]];
+        
+    }];
 }
 
 @end
