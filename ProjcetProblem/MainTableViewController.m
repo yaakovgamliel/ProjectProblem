@@ -52,7 +52,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     if (!self.subpath) {
         self.subpath = @"";
     }
