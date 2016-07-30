@@ -52,13 +52,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    if (self.subpath == nil) {
+    if (!self.subpath) {
         self.subpath = @"";
     }
     
     NSString *append = self.fileList[indexPath.row];
     NSString *newPath = [NSString stringWithFormat:@"%@/%@",self.subpath,append];
-    
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     MainTableViewController * controller = [storyboard instantiateViewControllerWithIdentifier:@"fileTable"];
@@ -66,12 +65,11 @@
     
     [self.navigationController pushViewController:controller animated:YES];
     
-    
     // log every file that i browse
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *appFile = [documentsDirectory stringByAppendingPathComponent:@"fileLog"];
-    NSString *logLine = [NSString stringWithFormat:@"%@\n\r",self.subpath];
+    NSString *logLine = [NSString stringWithFormat:@"%@/%@\n\r",self.subpath,[self.fileList objectAtIndex:indexPath.row]];
     NSFileHandle *fileHandler = [NSFileHandle fileHandleForUpdatingAtPath:appFile];
     if (!fileHandler) {
         [[NSFileManager defaultManager] createFileAtPath:appFile contents:nil attributes:nil];

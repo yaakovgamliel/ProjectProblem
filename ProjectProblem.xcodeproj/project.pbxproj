@@ -15,6 +15,7 @@
 		4CE383141BE8AB55009C8881 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE383131BE8AB55009C8881 /* MainTableViewController.m */; };
 		4CE3831A1BE8B3D7009C8881 /* coke_disc.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE383191BE8B3D7009C8881 /* coke_disc.png */; };
 		4CE3831C1BE8B3F4009C8881 /* pepsi-jpg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CE3831B1BE8B3F4009C8881 /* pepsi-jpg.jpg */; };
+		D7EEF0661D4D519300AD97CB /* SimpleLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = D7EEF0651D4D519300AD97CB /* SimpleLogger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		4CE383131BE8AB55009C8881 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		4CE383191BE8B3D7009C8881 /* coke_disc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coke_disc.png; sourceTree = "<group>"; };
 		4CE3831B1BE8B3F4009C8881 /* pepsi-jpg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pepsi-jpg.jpg"; sourceTree = "<group>"; };
+		D7EEF0641D4D519300AD97CB /* SimpleLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleLogger.h; sourceTree = "<group>"; };
+		D7EEF0651D4D519300AD97CB /* SimpleLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleLogger.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +69,8 @@
 				4CE382FF1BE8AAB9009C8881 /* AppDelegate.m */,
 				4CE383121BE8AB55009C8881 /* MainTableViewController.h */,
 				4CE383131BE8AB55009C8881 /* MainTableViewController.m */,
+				D7EEF0641D4D519300AD97CB /* SimpleLogger.h */,
+				D7EEF0651D4D519300AD97CB /* SimpleLogger.m */,
 				4CE383041BE8AAB9009C8881 /* Main.storyboard */,
 				4CE383071BE8AAB9009C8881 /* Assets.xcassets */,
 				4CE383091BE8AAB9009C8881 /* LaunchScreen.storyboard */,
@@ -160,6 +165,7 @@
 				4CE383001BE8AAB9009C8881 /* AppDelegate.m in Sources */,
 				4CE382FD1BE8AAB9009C8881 /* main.m in Sources */,
 				4CE383141BE8AB55009C8881 /* MainTableViewController.m in Sources */,
+				D7EEF0661D4D519300AD97CB /* SimpleLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
